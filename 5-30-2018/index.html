@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <form id="inputForm">
+      Enter the Number of Miles you are traveling: <input type="text" name="miles" id="milesInput"></br>
+
+      Where is your flight departing from? <select name="flightOrigin" id="flightOrigin">
+        <option value="eastCoast">East Coast</option>
+        <option value="westCoast">West Coast</option>
+        <option value="midwest">Midwest</option>
+      </select></br></br>
+      Would you like any inflight beverages? <select name="drinks" id="drinks" onchange="showDrinks()">
+          <option value="no" selected>No</option>
+          <option value="yes">Yes</option>
+        </select></br>
+
+      <div id="drinksDiv"></br>
+        Please select the number of each drink you would like:</br>
+         <input type="number" name="Pop" id="pop"> Pop: $2 Each </br>
+         <input type="number" name="water" id="water"> Water: $2 Each</br>
+         <input type="number" name="beer" id="beer"> Beer: $6 Each</br>
+      </div></br>
+
+      Would you like an inflight meal? <select name="meal" id="meal" onchange="showMeals()">
+          <option value="no" selected>No</option>
+          <option value="yes">Yes</option>
+        </select></br>
+
+      <div id="mealsDiv"></br>
+        Please select either a morning or afternoon meal: <select name="mealSelect" id="mealSelect">
+            <option value="Morning">Morning Meal $10</option>
+            <option value="Afternoon">Afternoon Meal $15</option>
+          </select>
+      </div></br>
+
+      <input id="submit" type="submit" value="Submit" onclick="calculateCost(), drinksCost(), totalKevinCostner()">
+    </form>
+    <p id="totalCost"></p>
+
+    <script src="index.js"></script>
+  </body>
+</html>
